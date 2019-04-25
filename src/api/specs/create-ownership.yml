@@ -1,0 +1,26 @@
+parameters:
+  - in: body
+    name: body
+    schema:
+      required:
+        - asset_id
+        - owner_id
+        - ntokens
+      properties:
+        asset_id:
+          type: string
+          description: id of asset
+          default:
+        owner_id:
+          type: string
+          description: id for token owner
+          default:
+        ntokens:
+          type: string
+          description: quantity of tokens
+          default:
+responses:
+  201:
+    description: Create a new ownership
+    schema:
+        type: string

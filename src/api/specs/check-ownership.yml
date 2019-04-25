@@ -1,0 +1,11 @@
+parameters:
+  - name: owners
+    in: path
+    required: true
+    type: string
+    description: owners
+responses:
+  200:
+    description: Get a ownership for given owner
+    schema:
+        type: string

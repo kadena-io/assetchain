@@ -1,0 +1,87 @@
+<!doctype html>
+
+  <header>
+    
+    <LINK href="/static/css/nav-bar.css" rel="stylesheet" type="text/css">
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <!------ Include the above in your HEAD tag ---------->
+      
+      <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+      <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+      <!------ Include the above in your HEAD tag ---------->
+      
+      <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  </header>
+
+  <body>
+
+    
+
+
+
+        <div class="row">
+          <div class="col-md-4 col-lg-3">
+
+                <div class="nav-side-menu">
+                  <div class="brand">Asset Tokenization DAPP</div>
+                  <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+                      <div class="menu-list">
+
+                          <ul id="menu-content" class="menu-content collapse out">
+
+                              <li  data-toggle="collapse" data-target="#ownerships" class="collapsed">
+                                <a href="#"><i class="fa fa-user fa-lg"></i> Ownerships <span class="fa fa-pull-right fa-chevron-down" style="padding-right:10px; padding-top: 5px;"></span></a>
+                              </li>
+                              <ul class="sub-menu collapse" id="ownerships">
+                                  <a href="/create-ownership"><li >Create Ownership</li></a>
+                                  <a href="/check-ownership"><li>Check Ownership</li></a>
+                              </ul>
+
+
+                              <li data-toggle="collapse" data-target="#transfers" class="collapsed">
+                                <a href="#"><i class="fa fa-exchange fa-lg"></i> Transfers <span class="fa fa-pull-right fa-chevron-down" style="padding-right:10px; padding-top: 5px;"></span></a>
+                              </li>
+                              <ul class="sub-menu collapse" id="transfers">
+                                <a href="/make-transfer"><li>Transfer</li></a>
+                                <a href="/transactionsbyowner"><li>Owner Transaction History</li></a>
+                                <a href="/transactionsbyasset"><li>Asset Transaction History</li></a>
+                              </ul>
+
+
+                              <li data-toggle="collapse" data-target="#new" class="collapsed">
+                                <a href="#"><i class="fa fa-bar-chart fa-lg"></i> Reporting <span class="fa fa-pull-right fa-chevron-down" style="padding-right:10px; padding-top: 5px;"></span></a>
+                              </li>
+                              <ul class="sub-menu collapse" id="new">
+                                  <a href="/get-owners"><li>Owner</li></a>
+                                  <a href="/get-owners-and-token-quantity"><li>Asset Token Distribution</li></a>
+                              </ul>
+
+                          </ul>
+                   </div>
+                </div>
+
+            
+          </div>
+          <div class="col-md-7 col-lg-7">
+              <div >
+              <div>
+            {% for message in get_flashed_messages() %}
+              <div class="alert alert-warning">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ message }}
+              </div>
+              {% endfor %}
+
+              {% block page_content %}{% endblock %}</div></div>
+            </div>
+            <div class="col-md-1 col-lg-2"></div>
+        </div>
+
+
+  </body>
+
+</html>

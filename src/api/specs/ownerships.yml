@@ -1,0 +1,6 @@
+responses:
+  200:
+    description: Get ownership list
+    schema:
+        type: array
+        items: string

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block page_content %}
+<div style="display:block; margin:15px;" class="row">
+    <div class="col-md-8">
+<h1>Asset Transaction History</h1>
+<hr>
+    {{ wtf.quick_form(form) }}
+<br>
+        {% if txs %}
+        <table class="table table-striped">
+          <thead>
+            <tr style="font-weight:bold;">
+              <td>#</td>
+              <td>Quantity</td>
+              <td>Detail</td>
+              <td>Date</td>
+            </tr>
+          </thead>
+          <tbody>
+            {% for tx in txs %}
+                <tr>
+                  <td>{{ loop.index }}</td>
+                  <td>{{ tx.quantity }}</td>
+                  <td>{{ tx.explain }} {{ tx.to_ID }} To {{ tx.from_id }}</td>
+                  <td>{{ tx.nonce }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+            </div>
+    <div class="col-md-4"></div>
+</div>
+{% endblock %}

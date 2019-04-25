@@ -1,0 +1,12 @@
+parameters:
+  - name: key
+    in: path
+    required: true
+    type: string
+    description: owner id
+responses:
+  200:
+    description: Get ownership for given asset id
+    schema:
+        type: array
+        items: json
